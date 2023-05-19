@@ -26,6 +26,7 @@
 		60BF26292A1683A2005EAA9E /* HomeNewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60BF26272A1683A2005EAA9E /* HomeNewsCell.xib */; };
 		60BF262C2A16B5A9005EAA9E /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 60BF262B2A16B5A9005EAA9E /* SDWebImage */; };
 		60BF26312A177927005EAA9E /* SecondPageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BF26302A177927005EAA9E /* SecondPageVC.swift */; };
+		60BF26372A178E09005EAA9E /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60BF26322A178CF7005EAA9E /* SafariServices.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		60BF26262A1683A2005EAA9E /* HomeNewsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNewsCell.swift; sourceTree = "<group>"; };
 		60BF26272A1683A2005EAA9E /* HomeNewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeNewsCell.xib; sourceTree = "<group>"; };
 		60BF26302A177927005EAA9E /* SecondPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPageVC.swift; sourceTree = "<group>"; };
+		60BF26322A178CF7005EAA9E /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 			files = (
 				60BF262C2A16B5A9005EAA9E /* SDWebImage in Frameworks */,
 				60BF261E2A166593005EAA9E /* NewsAPI in Frameworks */,
+				60BF26372A178E09005EAA9E /* SafariServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +170,7 @@
 		60BF261C2A166593005EAA9E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				60BF26322A178CF7005EAA9E /* SafariServices.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

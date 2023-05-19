@@ -80,52 +80,44 @@ extension ViewController: UICollectionViewDataSource {
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         // Get the selected news
-            let selectedNews = news[indexPath.row]
-
-            // Instantiate SecondPageVC from storyboard
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            guard let secondPageVC = storyboard.instantiateViewController(withIdentifier: "SecondPageVC") as? SecondPageVC else {
-                return
-            }
-
-            // Pass the necessary data to SecondPageVC
-            secondPageVC.authorLabel2 = selectedNews.byline ?? ""
-            secondPageVC.titleLabel2 = selectedNews.title ?? ""
-            secondPageVC.newsImageLabel = selectedNews.multimedia
-            secondPageVC.descriptionLabel2 = selectedNews.abstract ?? ""
-            secondPageVC.url = selectedNews.url ?? ""
-
-            // Push SecondPageVC onto the navigation stack
-            navigationController?.pushViewController(secondPageVC, animated: true)
+        let selectedNews = news[indexPath.row]
         
+        // Instantiate SecondPageVC from storyboard
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let secondPageVC = storyboard.instantiateViewController(withIdentifier: "SecondPageVC") as? SecondPageVC else {
+            return
+        }
         
-//        authorLable = news[indexPath.row].byline ?? ""
-//        titleLable = news[indexPath.row].title ?? ""
-//        NewsImageLable = news[indexPath.row].multimedia
-//        descriptionLable = news[indexPath.row].abstract ?? ""
-//        url = news[indexPath.row].url ?? ""
-       
+        // Pass the necessary data to SecondPageVC
+        secondPageVC.authorLabel2Text = selectedNews.byline ?? ""
+        secondPageVC.titleLabel2Text = selectedNews.title ?? ""
+        secondPageVC.newsImageLabelData = selectedNews.multimedia
+        secondPageVC.descriptionLabel2Text = selectedNews.abstract ?? ""
+        secondPageVC.url = selectedNews.url ?? ""
+        
+        // Push SecondPageVC onto the navigation stack
+        navigationController?.pushViewController(secondPageVC, animated: true)
     }
+
     
     
-//    private func calculateHeight() -> CGFloat {
-//        let cellWitdh = collectionView.frame.size.width - (Constants.cellLeftPadding + Constants.cellRightPadding)
-//        let posterImageHeight = cellWitdh * Constants.cellPosterImageRatio
-//
-//        return (Constants.cellTitleHeight + posterImageHeight)
-//    }
+    private func calculateHeight() -> CGFloat {
+        let cellWitdh = collectionView.frame.size.width - (Constants.cellLeftPadding + Constants.cellRightPadding)
+        let posterImageHeight = cellWitdh * Constants.cellPosterImageRatio
+
+        return (Constants.cellTitleHeight + posterImageHeight)
+    }
 }
 
-//extension ViewController: UICollectionViewDelegateFlowLayout {
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//
-//        .init(width: collectionView.frame.size.width - (Constants.cellLeftPadding + Constants.cellRightPadding), height: calculateHeight())
-//    }
+extension ViewController: UICollectionViewDelegateFlowLayout {
 
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        .init(top: .zero, left: Constants.cellLeftPadding, bottom: .zero, right: Constants.cellRightPadding)
-//    }
-//}
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        .init(width: collectionView.frame.size.width - (Constants.cellLeftPadding + Constants.cellRightPadding), height: calculateHeight())
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        .init(top: .zero, left: Constants.cellLeftPadding, bottom: .zero, right: Constants.cellRightPadding)
+    }
+}
