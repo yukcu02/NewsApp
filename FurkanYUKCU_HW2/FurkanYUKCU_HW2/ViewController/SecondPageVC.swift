@@ -11,6 +11,7 @@ import SafariServices
 
 class SecondPageVC: UIViewController {
     
+    
     @IBOutlet weak var newsImageLabel: UIImageView!
     
     @IBOutlet weak var titleLabel2: UILabel!
@@ -28,7 +29,7 @@ class SecondPageVC: UIViewController {
       
       override func viewDidLoad() {
           super.viewDidLoad()
-          
+         
           // Set the labels' text and load the image
           authorLabel2.text = authorLabel2Text
           titleLabel2.text = titleLabel2Text

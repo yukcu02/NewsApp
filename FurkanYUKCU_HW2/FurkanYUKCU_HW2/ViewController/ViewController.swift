@@ -36,15 +36,15 @@ final class ViewController: UIViewController, LoadingShowable {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tasarim:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-               let genislik = self.collectionView.frame.size.width
-               tasarim.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 40)
-               tasarim.itemSize = CGSize(width: (genislik-55)/2, height: (genislik-55)/2)
-               tasarim.minimumInteritemSpacing = 5
-               tasarim.minimumLineSpacing = 5
+        let design:UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+               let length = self.collectionView.frame.size.width
+               design.sectionInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+               design.itemSize = CGSize(width: (length-55)/2, height: (length-55)/2)
+               design.minimumInteritemSpacing = 10
+               design.minimumLineSpacing = 10
 
                print("inside viewdidload")
-               collectionView!.collectionViewLayout = tasarim
+               collectionView!.collectionViewLayout = design
         // Do any additional setup after loading the view.
         collectionView.register(cellType: HomeNewsCell.self)
     }
